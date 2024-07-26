@@ -5,8 +5,9 @@ name: npm-publish
 
 on:
   workflow_dispatch:
-  release:
-    types: [created]
+  push:
+    branches:
+      - release
 
 jobs:
   publish-npm:
