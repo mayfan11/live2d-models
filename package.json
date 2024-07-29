@@ -1,15 +1,30 @@
 {
   "name": "alligator-sinensis-live2d-model",
+  "private": true,
   "version": "1.0.4",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node scripts/build.js"
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "gen": "node scripts/gen.js",
+    "test": "node scripts/test.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "glob-promise": "^6.0.7"
+    "@vueuse/core": "^10.11.0",
+    "bytes": "^3.1.2",
+    "element-plus": "^2.7.8",
+    "get-folder-size": "^5.0.0",
+    "glob-promise": "^6.0.7",
+    "lodash-es": "^4.17.21",
+    "path-browserify": "^1.0.1",
+    "vue": "^3.3.11"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "npm": "^10.8.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vue-tsc": "^1.8.25"
   }
 }

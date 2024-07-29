@@ -1,0 +1,11 @@
+{
+  "name": "live2d-widget-model-guiwuli",
+  "version": "1.0.0",
+  "description": "an live2d model",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "guiwuli",
+  "license": "ISC"
+}
