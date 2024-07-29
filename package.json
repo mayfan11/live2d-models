@@ -1,6 +1,5 @@
 {
   "name": "alligator-sinensis-live2d-model",
-  "private": true,
   "version": "1.0.5",
   "type": "module",
   "scripts": {
