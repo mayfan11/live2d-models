@@ -5,9 +5,9 @@
       alt=""
       style="position: fixed; top: 0; left: 0; z-index: -1"
     />
-    <!-- <el-input @blur="onChange" v-model="current"></el-input> -->
     <el-space style="margin-bottom: 20px">
       <el-select
+        clearable
         v-model="current"
         style="width: 240px"
         @change="onChange"
