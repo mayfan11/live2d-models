@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import { sample } from "lodash-es";
-import models from "../menus/models.json";
+import models from "../model-nav/models.json";
 import { useStorage } from "@vueuse/core";
 import { onMounted } from "vue";
 import { ElMessage } from "element-plus";

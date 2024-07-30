@@ -15,7 +15,7 @@ globby([
   // const githubList = res.map((item) => {
   //   return `${packageJson.author}/${packageJson.name}/${item}`;
   // });
-  fs.writeFile("menus/models.json", JSON.stringify(res, null, 2), (err) => {
+  fs.writeFile("model-nav/models.json", JSON.stringify(res, null, 2), (err) => {
     if (err) throw err;
     console.log("JSON data is written to data.json file.");
   });
