@@ -1,4 +1,3 @@
-import glob from "glob-promise";
 import fs from "fs";
 import packageJson from "../package.json" assert { type: "json" };
 import { globby } from "globby";

@@ -15,7 +15,6 @@
     "bytes": "^3.1.2",
     "element-plus": "^2.7.8",
     "get-folder-size": "^5.0.0",
-    "glob-promise": "^6.0.7",
     "globby": "^14.0.2",
     "lodash-es": "^4.17.21",
     "path-browserify": "^1.0.1",
