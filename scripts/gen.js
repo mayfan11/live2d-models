@@ -13,7 +13,7 @@ globby([
     return `${packageJson.name}@${packageJson.version}/${item}`;
   });
   const githubList = res.map((item) => {
-    return `${packageJson.author}/packageJson.name/${item}`;
+    return `${packageJson.author}/${packageJson.name}/${item}`;
   });
   fs.writeFile("menus/models.json", JSON.stringify(res, null, 2), (err) => {
     if (err) throw err;
