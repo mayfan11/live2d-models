@@ -2,6 +2,7 @@
   "name": "alligator-sinensis-live2d-model",
   "version": "1.0.5",
   "type": "module",
+  "author": "alligator-sinensis",
   "scripts": {
     "dev": "npm run gen && vite",
     "build": "vue-tsc && vite build",
