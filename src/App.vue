@@ -72,7 +72,7 @@ const init = async () => {
 
   const modelOriginalWidth = model.width;
   const modelOriginalHeight = model.height;
-  model.height = 150;
+  model.height = 50;
   model.width = (modelOriginalWidth / modelOriginalHeight) * model.height;
 
   let appWidth = model.width;
@@ -86,12 +86,13 @@ const init = async () => {
   const app = new PIXI.Application({
     width: appWidth,
     height: appHight,
-    // transparent: true,
+    transparent: true,
   });
 
   document.body.appendChild(app.view);
   app.view.style.position = "fixed";
   app.view.style.zIndex = "10";
+  app.view.style.opacity = "0.5";
 
   app.stage.addChild(model);
 
