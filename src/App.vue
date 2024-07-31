@@ -45,6 +45,8 @@ const options = models.map((item, index) => {
 
 const current = useStorage("current", "");
 
+// @ts-ignore
+const PIXI = window.PIXI;
 let model;
 
 const clipboard = () => {
@@ -64,8 +66,7 @@ const onChange = (e) => {
 };
 
 const init = async () => {
-  // @ts-ignore
-  const PIXI = window.PIXI;
+  PIXI.live2d.SoundManager.volume = 1;
 
   model = await PIXI.live2d.Live2DModel.from(`/${current.value}`);
 
@@ -102,14 +103,9 @@ const init = async () => {
     hitAreas = hitAreas.map((item) => item.toLowerCase());
     if (hitAreas.includes("head")) {
       // 无参：随机表情
-      model.expression();
+      doExpression();
     } else {
-      const motionKeys = Object.keys(
-        model.internalModel.settings.motions || {}
-      );
-      const motion = sample(motionKeys);
-      console.log(motion);
-      model.motion(motion);
+      doMotion();
     }
   });
 
@@ -151,7 +147,7 @@ const doMotion = () => {
   const motionKeys = Object.keys(model.internalModel.settings.motions || {});
   const motion = sample(motionKeys);
   console.log(motion);
-  model.motion(motion);
+  model.motion(motion, undefined, PIXI.live2d.MotionPriority.FORCE);
 };
 
 const getRepeat = () => {
