@@ -20,7 +20,9 @@
           :value="item.value"
         />
       </el-select>
-      <el-button type="primary" @click="clipboard">Copy</el-button>
+      <el-button type="primary" @click="clipboard">clipboard</el-button>
+      <el-button type="primary" @click="doExpression">doExpression</el-button>
+      <el-button type="primary" @click="doMotion">doMotion</el-button>
     </el-space>
   </div>
 </template>
@@ -43,6 +45,8 @@ const options = models.map((item, index) => {
 
 const current = useStorage("current", "");
 
+let model;
+
 const clipboard = () => {
   navigator.clipboard.writeText(current.value).then(() => {
     ElMessage.success("复制成功");
@@ -63,7 +67,7 @@ const init = async () => {
   // @ts-ignore
   const PIXI = window.PIXI;
 
-  const model = await PIXI.live2d.Live2DModel.from(`/${current.value}`);
+  model = await PIXI.live2d.Live2DModel.from(`/${current.value}`);
 
   const modelOriginalWidth = model.width;
   const modelOriginalHeight = model.height;
@@ -138,6 +142,16 @@ const init = async () => {
     model.on("pointerupoutside", () => (model.dragging = false));
     model.on("pointerup", () => (model.dragging = false));
   }
+};
+
+const doExpression = () => {
+  model.expression();
+};
+const doMotion = () => {
+  const motionKeys = Object.keys(model.internalModel.settings.motions || {});
+  const motion = sample(motionKeys);
+  console.log(motion);
+  model.motion(motion);
 };
 
 const getRepeat = () => {
