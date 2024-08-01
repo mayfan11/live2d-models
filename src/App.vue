@@ -26,6 +26,7 @@
         style="width: 240px"
         filterable
         @change="onChange"
+        clearable
       />
       <el-button type="primary" @click="clipboard">clipboard</el-button>
       <el-button type="primary" @click="doExpression">doExpression</el-button>
