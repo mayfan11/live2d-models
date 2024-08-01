@@ -3,9 +3,12 @@ import packageJson from "../package.json" assert { type: "json" };
 import { globby } from "globby";
 
 globby([
-  "assets/**/*model.json",
-  "assets/**/*model3.json",
-  "assets/**/*index.json",
+  "assets/**/model.json",
+  "assets/**/*.model.json",
+  "assets/**/model3.json",
+  "assets/**/*.model3.json",
+  "assets/**/index.json",
+  "assets/**/*.index.json",
   "assets/**/*model*.json",
   "assets/**/.model.json",
 ]).then((res) => {
