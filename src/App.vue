@@ -24,6 +24,7 @@
       <el-button type="primary" @click="doExpression">doExpression</el-button>
       <el-button type="primary" @click="doMotion">doMotion</el-button>
     </el-space>
+    <el-input v-model="height" style="width: 240px"></el-input>
   </div>
 </template>
 
@@ -43,6 +44,7 @@ const options = models.map((item, index) => {
 });
 // console.log(options);
 
+const height = useStorage("height", 150);
 const current = useStorage("current", "");
 
 // @ts-ignore
@@ -72,7 +74,7 @@ const init = async () => {
 
   const modelOriginalWidth = model.width;
   const modelOriginalHeight = model.height;
-  model.height = 150;
+  model.height = height.value;
   model.width = (modelOriginalWidth / modelOriginalHeight) * model.height;
 
   let appWidth = model.width;
