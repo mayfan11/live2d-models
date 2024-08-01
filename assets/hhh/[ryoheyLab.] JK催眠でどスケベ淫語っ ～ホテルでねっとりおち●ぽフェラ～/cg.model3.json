@@ -470,5 +470,17 @@
       ]
     },
     "DisplayInfo": "cg.cdi3.json"
-  }
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": []
+    },
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": []
+    }
+  ]
 }
