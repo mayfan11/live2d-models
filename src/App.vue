@@ -10,7 +10,7 @@
         v-model="current"
         :options="options"
         style="width: 300px"
-        filterable
+        :filterable="false"
         @change="onChange"
         clearable
         popper-class="popper-class-66666"
@@ -25,10 +25,14 @@
       <el-button type="primary" @click="clipboard">clipboard</el-button>
       <el-button type="primary" @click="doExpression">doExpression</el-button>
       <el-button type="primary" @click="doMotion">doMotion</el-button>
-      <el-button type="primary" @click="clearModel">clearModel</el-button>
+      <!-- <el-button type="primary" @click="clearModel">clearModel</el-button> -->
     </el-space>
     <div>
-      <el-input v-model="height" style="width: 240px"></el-input>
+      <el-input-number
+        @change="onChange"
+        v-model="height"
+        style="margin-bottom: 20px"
+      ></el-input-number>
     </div>
   </div>
 </template>
@@ -73,13 +77,12 @@ onMounted(() => {
 });
 
 const onChange = () => {
-  if (model) {
-    clearModel();
-  }
+  clearModel();
   addModel();
 };
 
 const clearModel = () => {
+  if (!model) return;
   if (model.texture) {
     model.texture.destroy(true);
   }
@@ -110,10 +113,10 @@ const addModel = async () => {
     model.width = (modelOriginalWidth / modelOriginalHeight) * model.height;
     let appWidth = model.width;
     let appHight = model.height;
-    model.x = 50;
-    model.y = 50;
-    appWidth += 100;
-    appHight += 100;
+    model.x = 10;
+    model.y = 10;
+    appWidth += model.x * 2;
+    appHight += model.y * 2;
     app.renderer.resize(appWidth, appHight);
     app.stage.addChild(model);
     draggable(model);
@@ -212,7 +215,7 @@ getRepeat();
 
 <style lang="scss">
 .popper-class-66666 {
-  width: 500px;
+  width: 800px;
   .el-select-dropdown {
     width: 100% !important;
     .el-select-dropdown__list {
