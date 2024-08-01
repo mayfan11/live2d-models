@@ -7,6 +7,7 @@ globby([
   "assets/**/*model3.json",
   "assets/**/*index.json",
   "assets/**/*model*.json",
+  "assets/**/.model.json",
 ]).then((res) => {
   console.log(res.length);
   // const npmList = res.map((item) => {

@@ -88,12 +88,13 @@ const init = async () => {
   const app = new PIXI.Application({
     width: appWidth,
     height: appHight,
-    // transparent: true,
+    transparent: true,
   });
 
   document.body.appendChild(app.view);
   app.view.style.position = "fixed";
   app.view.style.zIndex = "10";
+  app.view.style.opacity = "0.5";
 
   app.stage.addChild(model);
 
