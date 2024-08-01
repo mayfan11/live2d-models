@@ -25,6 +25,7 @@
       <el-button type="primary" @click="clipboard">clipboard</el-button>
       <el-button type="primary" @click="doExpression">doExpression</el-button>
       <el-button type="primary" @click="doMotion">doMotion</el-button>
+      <el-button type="primary" @click="clearModel">clearModel</el-button>
     </el-space>
     <div>
       <el-input v-model="height" style="width: 240px"></el-input>
@@ -36,7 +37,7 @@
 import { sample } from "lodash-es";
 import models from "../model-nav/models.json";
 import { useStorage } from "@vueuse/core";
-import { onMounted, ref, computed } from "vue";
+import { onMounted, computed } from "vue";
 import { ElMessage } from "element-plus";
 import path from "path-browserify";
 import useClipboard from "vue-clipboard3";
@@ -64,61 +65,57 @@ const { toClipboard } = useClipboard();
 // @ts-ignore
 const PIXI = window.PIXI;
 let model;
-
-const clipboard = async () => {
-  // navigator.clipboard.writeText(current.value).then(() => {
-  //   ElMessage.success("复制成功");
-  // });
-  try {
-    await toClipboard(current.value);
-    ElMessage.success("复制成功");
-  } catch (e) {
-    ElMessage.error("复制失败");
-  }
-};
+let app;
 
 onMounted(() => {
-  if (current.value) {
-    init();
-  }
+  init();
+  addModel();
 });
 
-const onChange = (e) => {
-  location.reload();
+const onChange = () => {
+  if (model) {
+    clearModel();
+  }
+  addModel();
 };
 
-const init = async () => {
+const clearModel = () => {
+  if (model.texture) {
+    model.texture.destroy(true);
+  }
+  model.destroy(true);
+  model = null;
+};
+
+const init = () => {
+  app = new PIXI.Application({
+    width: 0,
+    height: 0,
+    // transparent: true,
+  });
+  PIXI.live2d.SoundManager.volume = 1;
+  document.body.appendChild(app.view);
+  app.view.style.position = "fixed";
+  app.view.style.zIndex = "10";
+  // app.view.style.opacity = "0.5";
+};
+
+const addModel = async () => {
+  if (!current.value) return;
   try {
-    PIXI.live2d.SoundManager.volume = 1;
-
     model = await PIXI.live2d.Live2DModel.from(`/${current.value}`);
-
     const modelOriginalWidth = model.width;
     const modelOriginalHeight = model.height;
     model.height = height.value;
     model.width = (modelOriginalWidth / modelOriginalHeight) * model.height;
-
     let appWidth = model.width;
     let appHight = model.height;
-
     model.x = 50;
     model.y = 50;
     appWidth += 100;
     appHight += 100;
-
-    const app = new PIXI.Application({
-      width: appWidth,
-      height: appHight,
-      transparent: true,
-    });
-
-    document.body.appendChild(app.view);
-    app.view.style.position = "fixed";
-    app.view.style.zIndex = "10";
-    // app.view.style.opacity = "0.5";
-
+    app.renderer.resize(appWidth, appHight);
     app.stage.addChild(model);
-
     draggable(model);
     addFrame(model);
     addHitAreaFrames(model);
@@ -176,6 +173,18 @@ const doMotion = () => {
   const motion = sample(motionKeys);
   console.log(motion);
   model.motion(motion, undefined, PIXI.live2d.MotionPriority.FORCE);
+};
+
+const clipboard = async () => {
+  // navigator.clipboard.writeText(current.value).then(() => {
+  //   ElMessage.success("复制成功");
+  // });
+  try {
+    await toClipboard(current.value);
+    ElMessage.success("复制成功");
+  } catch (e) {
+    ElMessage.error("复制失败");
+  }
 };
 
 const getRepeat = () => {
