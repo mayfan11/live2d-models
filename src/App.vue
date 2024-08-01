@@ -6,28 +6,22 @@
       style="position: fixed; top: 0; left: 0; z-index: -1"
     />
     <el-space style="margin-bottom: 20px">
-      <!-- <el-select
-        clearable
-        v-model="current"
-        style="width: 240px"
-        @change="onChange"
-        filterable
-      >
-        <el-option
-          v-for="(item, index) in options"
-          :key="index"
-          :label="item.label"
-          :value="item.value"
-        />
-      </el-select> -->
       <el-select-v2
         v-model="current"
         :options="options"
-        style="width: 240px"
+        style="width: 300px"
         filterable
         @change="onChange"
         clearable
-      />
+        popper-class="popper-class-66666"
+      >
+        <template #header>
+          <el-input v-model="search" clearable></el-input>
+        </template>
+        <template #default="{ item }">
+          <span :title="item.label">{{ item.label }}</span>
+        </template>
+      </el-select-v2>
       <el-button type="primary" @click="clipboard">clipboard</el-button>
       <el-button type="primary" @click="doExpression">doExpression</el-button>
       <el-button type="primary" @click="doMotion">doMotion</el-button>
@@ -42,21 +36,28 @@
 import { sample } from "lodash-es";
 import models from "../model-nav/models.json";
 import { useStorage } from "@vueuse/core";
-import { onMounted } from "vue";
+import { onMounted, ref, computed } from "vue";
 import { ElMessage } from "element-plus";
 import path from "path-browserify";
 import useClipboard from "vue-clipboard3";
 
-const options = models.map((item, index) => {
-  return {
-    label: `【${index + 1}】${item}`,
-    value: item,
-  };
+const options = computed(() => {
+  const map = models.map((item, index) => {
+    return {
+      label: `【${index + 1}】${item}`,
+      value: item,
+    };
+  });
+  const filter = map.filter((item) =>
+    item.label.toLowerCase().includes(search.value.toLowerCase())
+  );
+  return filter;
 });
 // console.log(options);
 
 const height = useStorage("height", 150);
 const current = useStorage("current", "");
+const search = useStorage("search", "");
 
 const { toClipboard } = useClipboard();
 
@@ -200,4 +201,14 @@ const getRepeat = () => {
 getRepeat();
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+.popper-class-66666 {
+  width: 500px;
+  .el-select-dropdown {
+    width: 100% !important;
+    .el-select-dropdown__list {
+      width: 100% !important;
+    }
+  }
+}
+</style>
