@@ -2,10 +2,7 @@
   "Version": 3,
   "FileReferences": {
     "Moc": "a02model_a.moc3",
-    "Textures": [
-      "textures/texture_00 #969.png",
-      "textures/texture_01 #562.png"
-    ],
+    "Textures": ["textures/texture_00.png", "textures/texture_01.png"],
     "Motions": {
       "Idle": [
         {

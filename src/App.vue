@@ -6,7 +6,7 @@
       style="position: fixed; top: 0; left: 0; z-index: -1"
     />
     <el-space style="margin-bottom: 20px">
-      <el-select
+      <!-- <el-select
         clearable
         v-model="current"
         style="width: 240px"
@@ -19,12 +19,21 @@
           :label="item.label"
           :value="item.value"
         />
-      </el-select>
+      </el-select> -->
+      <el-select-v2
+        v-model="current"
+        :options="options"
+        style="width: 240px"
+        filterable
+        @change="onChange"
+      />
       <el-button type="primary" @click="clipboard">clipboard</el-button>
       <el-button type="primary" @click="doExpression">doExpression</el-button>
       <el-button type="primary" @click="doMotion">doMotion</el-button>
     </el-space>
-    <el-input v-model="height" style="width: 240px"></el-input>
+    <div>
+      <el-input v-model="height" style="width: 240px"></el-input>
+    </div>
   </div>
 </template>
 
@@ -35,6 +44,7 @@ import { useStorage } from "@vueuse/core";
 import { onMounted } from "vue";
 import { ElMessage } from "element-plus";
 import path from "path-browserify";
+import useClipboard from "vue-clipboard3";
 
 const options = models.map((item, index) => {
   return {
@@ -47,14 +57,22 @@ const options = models.map((item, index) => {
 const height = useStorage("height", 150);
 const current = useStorage("current", "");
 
+const { toClipboard } = useClipboard();
+
 // @ts-ignore
 const PIXI = window.PIXI;
 let model;
 
-const clipboard = () => {
-  navigator.clipboard.writeText(current.value).then(() => {
+const clipboard = async () => {
+  // navigator.clipboard.writeText(current.value).then(() => {
+  //   ElMessage.success("复制成功");
+  // });
+  try {
+    await toClipboard(current.value);
     ElMessage.success("复制成功");
-  });
+  } catch (e) {
+    ElMessage.error("复制失败");
+  }
 };
 
 onMounted(() => {
@@ -68,78 +86,83 @@ const onChange = (e) => {
 };
 
 const init = async () => {
-  PIXI.live2d.SoundManager.volume = 1;
+  try {
+    PIXI.live2d.SoundManager.volume = 1;
 
-  model = await PIXI.live2d.Live2DModel.from(`/${current.value}`);
+    model = await PIXI.live2d.Live2DModel.from(`/${current.value}`);
 
-  const modelOriginalWidth = model.width;
-  const modelOriginalHeight = model.height;
-  model.height = height.value;
-  model.width = (modelOriginalWidth / modelOriginalHeight) * model.height;
+    const modelOriginalWidth = model.width;
+    const modelOriginalHeight = model.height;
+    model.height = height.value;
+    model.width = (modelOriginalWidth / modelOriginalHeight) * model.height;
 
-  let appWidth = model.width;
-  let appHight = model.height;
+    let appWidth = model.width;
+    let appHight = model.height;
 
-  model.x = 50;
-  model.y = 50;
-  appWidth += 100;
-  appHight += 100;
+    model.x = 50;
+    model.y = 50;
+    appWidth += 100;
+    appHight += 100;
 
-  const app = new PIXI.Application({
-    width: appWidth,
-    height: appHight,
-    transparent: true,
-  });
-
-  document.body.appendChild(app.view);
-  app.view.style.position = "fixed";
-  app.view.style.zIndex = "10";
-  app.view.style.opacity = "0.5";
-
-  app.stage.addChild(model);
-
-  draggable(model);
-  addFrame(model);
-  addHitAreaFrames(model);
-
-  model.on("hit", (hitAreas: string[]) => {
-    hitAreas = hitAreas.map((item) => item.toLowerCase());
-    if (hitAreas.includes("head")) {
-      // 无参：随机表情
-      doExpression();
-    } else {
-      doMotion();
-    }
-  });
-
-  function addFrame(model: any) {
-    const foreground = PIXI.Sprite.from(PIXI.Texture.WHITE);
-    foreground.width = model.internalModel.width;
-    foreground.height = model.internalModel.height;
-    foreground.alpha = 0.2;
-    model.addChild(foreground);
-  }
-
-  function addHitAreaFrames(model: any) {
-    const hitAreaFrames = new PIXI.live2d.HitAreaFrames();
-    model.addChild(hitAreaFrames);
-  }
-
-  function draggable(model: any) {
-    model.buttonMode = true;
-    model.on("pointerdown", (e: any) => {
-      model.dragging = true;
-      model._pointerX = e.data.global.x - model.x;
-      model._pointerY = e.data.global.y - model.y;
+    const app = new PIXI.Application({
+      width: appWidth,
+      height: appHight,
+      transparent: true,
     });
-    model.on("pointermove", (e: any) => {
-      if (model.dragging) {
-        model.position.x = e.data.global.x - model._pointerX;
-        model.position.y = e.data.global.y - model._pointerY;
+
+    document.body.appendChild(app.view);
+    app.view.style.position = "fixed";
+    app.view.style.zIndex = "10";
+    // app.view.style.opacity = "0.5";
+
+    app.stage.addChild(model);
+
+    draggable(model);
+    addFrame(model);
+    addHitAreaFrames(model);
+
+    model.on("hit", (hitAreas: string[]) => {
+      hitAreas = hitAreas.map((item) => item.toLowerCase());
+      if (hitAreas.includes("head")) {
+        // 无参：随机表情
+        doExpression();
+      } else {
+        doMotion();
       }
     });
-    model.on("pointerupoutside", () => (model.dragging = false));
-    model.on("pointerup", () => (model.dragging = false));
+
+    function addFrame(model: any) {
+      const foreground = PIXI.Sprite.from(PIXI.Texture.WHITE);
+      foreground.width = model.internalModel.width;
+      foreground.height = model.internalModel.height;
+      foreground.alpha = 0.2;
+      model.addChild(foreground);
+    }
+
+    function addHitAreaFrames(model: any) {
+      const hitAreaFrames = new PIXI.live2d.HitAreaFrames();
+      model.addChild(hitAreaFrames);
+    }
+
+    function draggable(model: any) {
+      model.buttonMode = true;
+      model.on("pointerdown", (e: any) => {
+        model.dragging = true;
+        model._pointerX = e.data.global.x - model.x;
+        model._pointerY = e.data.global.y - model.y;
+      });
+      model.on("pointermove", (e: any) => {
+        if (model.dragging) {
+          model.position.x = e.data.global.x - model._pointerX;
+          model.position.y = e.data.global.y - model._pointerY;
+        }
+      });
+      model.on("pointerupoutside", () => (model.dragging = false));
+      model.on("pointerup", () => (model.dragging = false));
+    }
+  } catch (error) {
+    ElMessage.error("加载失败");
+    throw error;
   }
 };
 
@@ -172,6 +195,7 @@ const getRepeat = () => {
   }
   console.log(obj);
 };
+
 getRepeat();
 </script>
 

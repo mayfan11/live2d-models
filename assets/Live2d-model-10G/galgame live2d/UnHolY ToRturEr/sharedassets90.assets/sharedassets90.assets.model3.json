@@ -2,9 +2,7 @@
   "Version": 3,
   "FileReferences": {
     "Moc": "sharedassets90.assets.moc3",
-    "Textures": [
-      "textures/texture_00.png"
-    ],
+    "Textures": ["textures/texture_00.png"],
     "Physics": null,
     "Motions": {
       "": [
