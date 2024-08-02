@@ -61,7 +61,7 @@
     "touch_hand": [
       {
         "file": "motions/touch_hand.mtn",
-        "sound": "11110_01",
+        "sound": "../../role_voice/11110_01.ogg",
         "fade_in": 0,
         "fade_out": 0,
         "say_text": "虽然，伊文捷琳还没完全独当一面，但班长的温柔给我了力量"

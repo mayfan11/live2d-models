@@ -36,7 +36,7 @@
     "slide_TY": [
       {
         "file": "motions/tap_TY.mtn",
-        "sound": "10120_touch08",
+        "sound": "../../role_voice/10120_touch08.ogg",
         "say_text": "唔，别碰我，我还能喝……"
       }
     ],
@@ -50,7 +50,7 @@
     "tap_HEAD": [
       {
         "file": "motions/tap_head.mtn",
-        "sound": "10120_touch01",
+        "sound": "../../role_voice/10120_touch01.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "诶嘿嘿",
@@ -80,7 +80,7 @@
     "tap_OP02": [
       {
         "file": "motions/touch_99.mtn",
-        "sound": "10120_touch07",
+        "sound": "../../role_voice/10120_touch07.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "喏，手上的这瓶酒给你……",
@@ -90,7 +90,7 @@
     "tap_FOOD": [
       {
         "file": "motions/touch_01.mtn",
-        "sound": "10120_touch02",
+        "sound": "../../role_voice/10120_touch02.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "你在做……什么啊？",
@@ -100,7 +100,7 @@
     "tap_FOOD01": [
       {
         "file": "motions/touch_0101.mtn",
-        "sound": "10120_touch02",
+        "sound": "../../role_voice/10120_touch02.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "你在做……什么啊？",
@@ -110,7 +110,7 @@
     "tap_FOOD02": [
       {
         "file": "motions/touch_99.mtn",
-        "sound": "10120_touch07",
+        "sound": "../../role_voice/10120_touch07.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "喏，手上的这瓶酒给你……",
@@ -120,7 +120,7 @@
     "tap_SSJP": [
       {
         "file": "motions/touch_02.mtn",
-        "sound": "10120_touch03",
+        "sound": "../../role_voice/10120_touch03.ogg",
         "say_text": "咕噜咕噜咕噜……"
       }
     ],
@@ -134,7 +134,7 @@
     "tap_SSJP02": [
       {
         "file": "motions/touch_99.mtn",
-        "sound": "10120_touch07",
+        "sound": "../../role_voice/10120_touch07.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "喏，手上的这瓶酒给你……",
@@ -144,7 +144,7 @@
     "tap_DFS": [
       {
         "file": "motions/touch_03.mtn",
-        "sound": "10120_touch04",
+        "sound": "../../role_voice/10120_touch04.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "风，吹的好舒服……",
@@ -154,7 +154,7 @@
     "tap_DSJP": [
       {
         "file": "motions/touch_04.mtn",
-        "sound": "10120_touch05",
+        "sound": "../../role_voice/10120_touch05.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "是什么东西在吵啊……",
@@ -164,7 +164,7 @@
     "tap_QJT": [
       {
         "file": "motions/touch_05.mtn",
-        "sound": "10120_touch06",
+        "sound": "../../role_voice/10120_touch06.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "别晃来晃去的，头好晕……",
@@ -184,7 +184,7 @@
     "tap_YX1": [
       {
         "file": "motions/touch_07_1.mtn",
-        "sound": "10120_touch09",
+        "sound": "../../role_voice/10120_touch09.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "唔……嗯？",
@@ -192,7 +192,7 @@
       },
       {
         "file": "motions/touch_07_2.mtn",
-        "sound": "10120_touch09",
+        "sound": "../../role_voice/10120_touch09.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "唔……嗯？",
@@ -202,7 +202,7 @@
     "tap_YX2": [
       {
         "file": "motions/touch_07_1.mtn",
-        "sound": "10120_touch09",
+        "sound": "../../role_voice/10120_touch09.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "唔……嗯？",
@@ -210,7 +210,7 @@
       },
       {
         "file": "motions/touch_07_2.mtn",
-        "sound": "10120_touch09",
+        "sound": "../../role_voice/10120_touch09.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "唔……嗯？",

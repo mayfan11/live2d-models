@@ -26,13 +26,13 @@
     "stay": [
       {
         "file": "motions/idle.mtn",
-        "sound": "129_H",
+        "sound": "../../role_voice/129_H.ogg",
         "say_text": "魂器学院，由我来守护！",
         "say_text_show_time": 2
       },
       {
         "file": "motions/idle01.mtn",
-        "sound": "129_01",
+        "sound": "../../role_voice/129_01.ogg",
         "say_text": "学院的安全就交给我吧，我会做好巡逻工作的！",
         "say_text_show_time": 7
       }

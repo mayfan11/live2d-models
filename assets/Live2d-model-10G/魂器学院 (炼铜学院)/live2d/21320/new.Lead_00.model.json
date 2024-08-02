@@ -39,7 +39,7 @@
         "file": "mot/stay_01.mtn",
         "weight": 1,
         "say_text": "呜……好困……那就先……休息一下……",
-        "sound": "11320_stay01"
+        "sound": "../../role_voice/11320_stay01.ogg"
       },
       {
         "file": "mot/stay_02.mtn",
@@ -49,14 +49,14 @@
         "file": "mot/stay_03.mtn",
         "weight": 1,
         "say_text": "窗外吹来的微风……好舒服……",
-        "sound": "11320_stay03"
+        "sound": "../../role_voice/11320_stay03.ogg"
       }
     ],
     "tap_leg": [
       {
         "file": "mot/touch_01.mtn",
         "say_text": "班……班长，千竹的脚不可以随便碰！",
-        "sound": "11320_touch01",
+        "sound": "../../role_voice/11320_touch01.ogg",
         "weight": 1
       }
     ],
@@ -64,7 +64,7 @@
       {
         "file": "mot/touch_06.mtn",
         "say_text": "枕头软软的，靠起来好舒服……",
-        "sound": "11320_touch03",
+        "sound": "../../role_voice/11320_touch03.ogg",
         "weight": 1
       }
     ],
@@ -72,7 +72,7 @@
       {
         "file": "mot/touch_07.mtn",
         "say_text": "班长口渴了吗，我去给你倒杯茶吧。",
-        "sound": "11320_touch02",
+        "sound": "../../role_voice/11320_touch02.ogg",
         "weight": 1
       }
     ],
@@ -85,7 +85,7 @@
       {
         "file": "mot/touch_02.mtn",
         "say_text": "哎……哎？！……班长快转过去啦！",
-        "sound": "11320_touch04",
+        "sound": "../../role_voice/11320_touch04.ogg",
         "say_text_show_time": 4.8,
         "weight": 1
       }

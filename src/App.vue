@@ -24,6 +24,11 @@
       </el-select-v2>
       <el-button type="primary" @click="clipboard">clipboard</el-button>
       <el-button type="primary" @click="doExpression">doExpression</el-button>
+      <el-input
+        v-model="previewMotion"
+        clearable
+        placeholder="previewMotion"
+      ></el-input>
       <el-button type="primary" @click="doMotion">doMotion</el-button>
       <!-- <el-button type="primary" @click="clearModel">clearModel</el-button> -->
       <el-input-number @change="onChange" v-model="height"></el-input-number>
@@ -57,6 +62,7 @@ const options = computed(() => {
 const height = useStorage("height", 150);
 const current = useStorage("current", "");
 const search = useStorage("search", "");
+const previewMotion = useStorage("previewMotion", "");
 
 const { toClipboard } = useClipboard();
 
@@ -169,7 +175,8 @@ const doExpression = () => {
 };
 const doMotion = () => {
   const motionKeys = Object.keys(model.internalModel.settings.motions || {});
-  const motion = sample(motionKeys);
+  let motion = sample(motionKeys);
+  if (previewMotion.value) motion = previewMotion.value;
   console.log(motion);
   model.motion(motion, undefined, PIXI.live2d.MotionPriority.FORCE);
 };

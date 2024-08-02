@@ -25,7 +25,7 @@
         "fade_out": 300,
         "say_text": "我刚研磨了新配方的毒药，该去找谁试下呢？",
         "weight": 1,
-        "sound": "120_00601",
+        "sound": "../../role_voice/120_00601.ogg",
         "say_text_show_time": 4
       },
       {
@@ -34,14 +34,14 @@
         "fade_out": 300,
         "say_text": "我发誓，风魔一族将在我的手上重放荣光！",
         "weight": 1,
-        "sound": "120_00301",
+        "sound": "../../role_voice/120_00301.ogg",
         "say_text_show_time": 5
       }
     ],
     "tap_D_PSD.09": [
       {
         "file": "mot/touch_pangci.mtn",
-        "sound": "120_00701",
+        "sound": "../../role_voice/120_00701.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "你摸我做什么？是不是想从我身上盗取我祖传的秘术之卷！",

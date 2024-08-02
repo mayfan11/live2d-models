@@ -96,7 +96,7 @@
       {
         "file": "motions/touch_03.mtn",
         "say_text": "嗯哼，终于忍不住要对爱丽丝出手了吗？想不到班长也是这么无聊的家伙呢……",
-        "sound": "12820_touch01",
+        "sound": "../../role_voice/12820_touch01.ogg",
         "weight": 1
       }
     ],
@@ -110,7 +110,7 @@
       {
         "file": "motions/touch_06.mtn",
         "say_text": "居然以为摸摸头就能讨女孩子的欢心，班长还真是幼稚呢~",
-        "sound": "12820_touch05",
+        "sound": "../../role_voice/12820_touch05.ogg",
         "weight": 1
       }
     ],
@@ -118,7 +118,7 @@
       {
         "file": "motions/touch_07.mtn",
         "say_text": "哦？班长要给爱丽丝按摩吗？记得要温柔哦~",
-        "sound": "12820_touch02",
+        "sound": "../../role_voice/12820_touch02.ogg",
         "weight": 1
       }
     ],
@@ -126,7 +126,7 @@
       {
         "file": "motions/touch_08.mtn",
         "say_text": "班长要和我一起玩魔方吗？我可以教你“六面皇后”玩法哟~",
-        "sound": "12820_touch03",
+        "sound": "../../role_voice/12820_touch03.ogg",
         "weight": 1
       }
     ],
@@ -134,7 +134,7 @@
       {
         "file": "motions/touch_09.mtn",
         "say_text": "是不是软绵绵的呢，哎呀，我是在说抱枕，班长想哪去了~",
-        "sound": "12820_touch04",
+        "sound": "../../role_voice/12820_touch04.ogg",
         "weight": 1
       }
     ],
@@ -167,7 +167,7 @@
       {
         "file": "motions/touch_01.mtn",
         "say_text": "居然对女孩的脚感兴趣，班长的口味还真是糟糕呢。",
-        "sound": "12820_touch06",
+        "sound": "../../role_voice/12820_touch06.ogg",
         "weight": 1
       }
     ],
@@ -175,7 +175,7 @@
       {
         "file": "motions/touch_01B.mtn",
         "say_text": "居然对女孩的脚感兴趣，班长的口味还真是糟糕呢。",
-        "sound": "12820_touch06",
+        "sound": "../../role_voice/12820_touch06.ogg",
         "weight": 1
       }
     ],

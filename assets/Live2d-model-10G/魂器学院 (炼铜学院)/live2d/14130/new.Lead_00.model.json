@@ -52,7 +52,7 @@
     "touch_breast": [
       {
         "file": "motions/touch_breast.mtn",
-        "sound": "14130_02",
+        "sound": "../../role_voice/14130_02.ogg",
         "say_text": "队长，欺负新人也要适可而止呀！",
         "say_text_show_time": 0
       }

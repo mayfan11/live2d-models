@@ -65,7 +65,7 @@
         "fade_in": 0,
         "fade_out": 0,
         "say_text": "轻拂的微风、摇曳的竹林，班长想和千竹一起度过这段悠闲的午后吗？",
-        "sound": "11320_12",
+        "sound": "../../role_voice/11320_12.ogg",
         "say_text_show_time": 11
       }
     ],

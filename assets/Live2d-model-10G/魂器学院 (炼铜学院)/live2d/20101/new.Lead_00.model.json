@@ -25,7 +25,7 @@
     "stay": [
       {
         "file": "motions/stay_01.mtn",
-        "sound": "10220_stay01",
+        "sound": "../../role_voice/10220_stay01.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "偷偷尝点……",
@@ -35,7 +35,7 @@
     "tap_head": [
       {
         "file": "motions/touch_01.mtn",
-        "sound": "10220_touch05",
+        "sound": "../../role_voice/10220_touch05.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "唔……",
@@ -45,7 +45,7 @@
     "tap_ass": [
       {
         "file": "motions/touch_02.mtn",
-        "sound": "10220_touch02",
+        "sound": "../../role_voice/10220_touch02.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "手。拿开。",
@@ -58,7 +58,7 @@
     "tap_bra": [
       {
         "file": "motions/touch_03.mtn",
-        "sound": "10220_touch03",
+        "sound": "../../role_voice/10220_touch03.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "这个。不能吃。。",
@@ -71,7 +71,7 @@
     "tap_leg": [
       {
         "file": "motions/touch_04.mtn",
-        "sound": "10220_touch01",
+        "sound": "../../role_voice/10220_touch01.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "嗯？好痒……",
@@ -81,7 +81,7 @@
     "tap_panda": [
       {
         "file": "motions/touch_05.mtn",
-        "sound": "10220_touch04",
+        "sound": "../../role_voice/10220_touch04.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "别碰，那个，还没煮过。",
@@ -91,7 +91,7 @@
     "tap_cleaner": [
       {
         "file": "motions/touch_06.mtn",
-        "sound": "10220_touch06",
+        "sound": "../../role_voice/10220_touch06.ogg",
         "fade_in": 300,
         "fade_out": 300,
         "say_text": "唔，起风了",

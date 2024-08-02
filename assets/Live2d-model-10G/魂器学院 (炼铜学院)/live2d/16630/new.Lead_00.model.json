@@ -63,7 +63,7 @@
         "file": "motions/touch_02.mtn",
         "fade_in": 0,
         "fade_out": 0,
-        "sound": "16630_00301",
+        "sound": "../../role_voice/16630_00301.ogg",
         "say_text": "午后的阳光很不错，就这么睡一觉吧……zzzz",
         "say_text_show_time": 10
       }

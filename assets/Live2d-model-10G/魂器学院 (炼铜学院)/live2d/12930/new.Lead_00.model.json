@@ -98,7 +98,7 @@
     "touch_erji": [
       {
         "file": "motions/touch_erji.mtn",
-        "sound": "liulibgm"
+        "sound": "../../role_voice/liulibgm.ogg"
       }
     ],
     "touch_pocky": [
@@ -109,7 +109,7 @@
     "touch_panci": [
       {
         "file": "motions/touch_99.mtn",
-        "sound": "12930_0202",
+        "sound": "../../role_voice/12930_0202.ogg",
         "say_text": "终于露出真面目了吗？拔剑吧，人·渣·！",
         "say_text_show_time": 7
       }

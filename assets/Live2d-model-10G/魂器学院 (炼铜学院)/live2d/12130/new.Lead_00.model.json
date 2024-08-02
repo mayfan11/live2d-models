@@ -94,7 +94,7 @@
     "touch_haixiu": [
       {
         "file": "motions/touch_haixiu.mtn",
-        "sound": "121_02",
+        "sound": "../../role_voice/121_02.ogg",
         "say_text": "嗷呜~最喜欢主人摸我头啦，好舒服~",
         "say_text_show_time": 10
       }
@@ -107,7 +107,7 @@
     "touch_window": [
       {
         "file": "motions/touch_window.mtn",
-        "sound": "121_01",
+        "sound": "../../role_voice/121_01.ogg",
         "say_text": "汪！快陪我一起玩！",
         "say_text_show_time": 5
       }

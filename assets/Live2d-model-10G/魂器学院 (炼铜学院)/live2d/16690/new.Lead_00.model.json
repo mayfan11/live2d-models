@@ -58,7 +58,7 @@
     "touch_head": [
       {
         "file": "motions/touch_head.mtn",
-        "sound": "166_0202",
+        "sound": "../../role_voice/166_0202.ogg",
         "say_text": "决定了，不听话的你就一生，一生都留在妮妮珐的实验室里！",
         "say_text_show_time": 0
       }
@@ -66,7 +66,7 @@
     "touch_Hips": [
       {
         "file": "motions/touch_Hips.mtn",
-        "sound": "166_0201",
+        "sound": "../../role_voice/166_0201.ogg",
         "say_text": "再不停下的话，就要为你的行为支付代价了哦~",
         "say_text_show_time": 0
       }
