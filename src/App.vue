@@ -218,6 +218,7 @@ getRepeat();
 <style lang="scss">
 .popper-class-66666 {
   width: 800px;
+  display: block !important;
   .el-select-dropdown {
     width: 100% !important;
     .el-select-dropdown__list {
