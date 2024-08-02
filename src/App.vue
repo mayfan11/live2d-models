@@ -26,14 +26,8 @@
       <el-button type="primary" @click="doExpression">doExpression</el-button>
       <el-button type="primary" @click="doMotion">doMotion</el-button>
       <!-- <el-button type="primary" @click="clearModel">clearModel</el-button> -->
+      <el-input-number @change="onChange" v-model="height"></el-input-number>
     </el-space>
-    <div>
-      <el-input-number
-        @change="onChange"
-        v-model="height"
-        style="margin-bottom: 20px"
-      ></el-input-number>
-    </div>
   </div>
 </template>
 
