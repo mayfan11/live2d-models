@@ -2,9 +2,10 @@
   "type": "Live2D Model Setting",
   "name": "妮妮法_春节",
   "model": "Lead_00.moc",
-  "textures": {
-    "16690": ["texture_00.png", "texture_01.png"]
-  },
+  "textures": [
+    "textures/texture_00.png",
+    "textures/texture_01.png"
+  ],
   "config": {
     "scale": 1,
     "posX": 0,
@@ -77,8 +78,17 @@
     ]
   },
   "hit_areas": [
-    { "name": "touch_chuanghu", "id": "D_REF_PT_touch_chuanghu" },
-    { "name": "touch_head", "id": "D_REF_PT_touch_head" },
-    { "name": "touch_Hips", "id": "D_REF_PT_touch_Hips" }
+    {
+      "name": "touch_chuanghu",
+      "id": "D_REF_PT_touch_chuanghu"
+    },
+    {
+      "name": "touch_head",
+      "id": "D_REF_PT_touch_head"
+    },
+    {
+      "name": "touch_Hips",
+      "id": "D_REF_PT_touch_Hips"
+    }
   ]
 }
