@@ -99,7 +99,7 @@ const init = () => {
   PIXI.live2d.SoundManager.volume = 1;
   document.body.appendChild(app.view);
   app.view.style.position = "fixed";
-  app.view.style.left = "0";
+  app.view.style.right = "0";
   app.view.style.bottom = "0";
   app.view.style.zIndex = "10";
   // app.view.style.opacity = "0.5";
