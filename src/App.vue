@@ -6,6 +6,7 @@
       style="position: fixed; top: 0; left: 0; z-index: -1"
     />
     <el-space style="margin-bottom: 20px">
+      {{ options.length }}
       <el-select-v2
         v-model="current"
         :options="options"
