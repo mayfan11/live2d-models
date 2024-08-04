@@ -30,6 +30,6 @@ globby([
   //   "**/*.png",
 ]).then((resList) => {
   console.log(resList);
-  const resList = resList.map((item) => item.splite("/"));
+  resList = resList.map((item) => item.split("/"));
   console.log(resList);
 });
