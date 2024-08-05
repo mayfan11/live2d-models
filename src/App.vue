@@ -16,7 +16,10 @@
         popper-class="popper-class-66666"
       >
         <template #header>
-          <el-input v-model="search" clearable></el-input>
+          <div style="display: flex; align-items: center">
+            <el-input v-model="search" clearable></el-input>
+            {{ options.length }}
+          </div>
         </template>
         <template #default="{ item }">
           <span :title="item.label">{{ item.label }}</span>
