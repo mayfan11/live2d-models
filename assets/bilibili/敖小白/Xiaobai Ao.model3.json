@@ -1,0 +1,24 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Xiaobai Ao.moc3",
+		"Textures": [
+			"Xiaobai Ao.8192/texture_00.png",
+			"Xiaobai Ao.8192/texture_01.png"
+		],
+		"Physics": "Xiaobai Ao.physics3.json",
+		"DisplayInfo": "Xiaobai Ao.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}

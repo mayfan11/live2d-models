@@ -1,0 +1,24 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Xiaobai Ao Cheongsam.moc3",
+		"Textures": [
+			"Xiaobai Ao Cheongsam.8192/texture_00.png",
+			"Xiaobai Ao Cheongsam.8192/texture_01.png"
+		],
+		"Physics": "Xiaobai Ao Cheongsam.physics3.json",
+		"DisplayInfo": "Xiaobai Ao Cheongsam.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}
