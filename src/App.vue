@@ -97,7 +97,7 @@ const init = () => {
   app = new PIXI.Application({
     width: 0,
     height: 0,
-    // transparent: true,
+    transparent: true,
   });
   PIXI.live2d.SoundManager.volume = 1;
   document.body.appendChild(app.view);
@@ -126,7 +126,7 @@ const addModel = async () => {
     app.stage.addChild(model);
     draggable(model);
     addFrame(model);
-    addHitAreaFrames(model);
+    // addHitAreaFrames(model);
 
     model.on("hit", (hitAreas: string[]) => {
       hitAreas = hitAreas.map((item) => item.toLowerCase());

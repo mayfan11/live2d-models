@@ -2,9 +2,6 @@
   "Version": 3,
   "FileReferences": {
     "Moc": "c10model.moc3",
-    "Textures": [
-      "textures/texture_00 #646.png",
-      "textures/texture_01 #1066.png"
-    ]
+    "Textures": ["textures/texture_00.png", "textures/texture_01.png"]
   }
 }
