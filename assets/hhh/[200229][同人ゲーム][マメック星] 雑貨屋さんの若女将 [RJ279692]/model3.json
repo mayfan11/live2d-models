@@ -1,0 +1,43 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "01.moc3",
+    "Textures": ["textures/texture_00.png"],
+    "DisplayInfo": "displayInfo.json",
+    "Motions": {
+      "Ikuiku": [
+        {
+          "File": "motions/ikuiku.motion3.json"
+        }
+      ],
+      "Kokyu": [
+        {
+          "File": "motions/kokyuuu.motion3.json"
+        }
+      ],
+      "Pston": [
+        {
+          "File": "motions/psotn.motion3.json"
+        }
+      ],
+      "PstonX": [
+        {
+          "File": "motions/pstonX.motion3.json"
+        }
+      ]
+    }
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "LipSync",
+      "Ids": []
+    },
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": []
+    }
+  ],
+  "HitAreas": []
+}
