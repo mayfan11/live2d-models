@@ -1,8 +1,0 @@
-{
-  "Version": 3,
-  "FileReferences": {
-    "Moc": "b03model.moc3",
-    "Textures": ["textures/texture_00.png", "textures/texture_01.png"]
-  },
-  "AutoBreath": false
-}
