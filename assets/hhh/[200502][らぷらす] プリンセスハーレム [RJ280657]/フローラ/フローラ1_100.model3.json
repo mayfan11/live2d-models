@@ -2,9 +2,7 @@
   "Version": 3,
   "FileReferences": {
     "Moc": "フローラ1_100.moc3",
-    "Textures": [
-      "textures/texture_00 #3.png"
-    ]
+    "Textures": ["textures/texture_003.png"]
   },
   "Controllers": {
     "ParamHit": {},

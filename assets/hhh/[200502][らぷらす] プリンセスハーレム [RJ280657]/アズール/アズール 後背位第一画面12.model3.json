@@ -1,10 +1,8 @@
 {
   "Version": 3,
   "FileReferences": {
-    "Moc": "アズール 後背位第二画面39.moc3",
-    "Textures": [
-      "textures/texture_00 #5.png"
-    ]
+    "Moc": "アズール 後背位第一画面12.moc3",
+    "Textures": ["textures/texture_003.png"]
   },
   "Controllers": {
     "ParamHit": {},
