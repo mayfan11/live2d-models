@@ -1,6 +1,0 @@
-{
-  "type": "Live2D Model Setting",
-  "name": "model",
-  "model": "model.moc",
-  "textures": ["model.2048/android/texture_00.png"]
-}
